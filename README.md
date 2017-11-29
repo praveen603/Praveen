@@ -1,2 +1,2 @@
-# UFT_Scripts
-#Test
+# Veridic_Atlanta
+This project belongs to Atlanta only
