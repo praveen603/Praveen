@@ -6,13 +6,13 @@ pipeline {
                 git 'https://github.com/praveen603/Praveen.git'
             }
         }
-        #stage('Build') {
-            #steps {
-                #git 'https://github.com/praveen603/New.git' {
-                    #sh 'mvn clean compile'
-                #}
-           # }
-       # }
+        stage('Build') {
+            steps {
+                git 'https://github.com/praveen603/New.git' {
+                    sh 'mvn clean compile'
+                }
+            }
+        }
         
     }
 }
