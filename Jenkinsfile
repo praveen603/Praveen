@@ -10,14 +10,19 @@ pipeline {
         stage('Build') {
             steps {
                 
-                    echo 'mvn clean compile'
+                    echo 'Build step'
                 
             }
        	   }
+		   stage('Deploy'){
+	       steps {
+		   echo 'deploy step'
+	   }
+	   }
        
 	   stage('Deploy'){
 	       steps {
-		   echo 'deploy'
+		   echo 'deploy step'
 	   }
 	   }
 	   
