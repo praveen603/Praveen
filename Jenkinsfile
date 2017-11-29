@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                maven 'C/apache-maven-3.5.0/my-app' {
+                git 'https://github.com/praveen603/New.git' {
                     sh 'mvn clean compile'
                 }
             }
