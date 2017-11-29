@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                withMaven(maven:'maven_3_0_5') {
+                maven 'https://github.com/praveen603/New.git' {
                     sh 'mvn clean compile'
                 }
             }
