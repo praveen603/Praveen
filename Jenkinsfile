@@ -1,29 +1,24 @@
-#!/usr/bin/env groovy
 pipeline {
     agent any
-
     stages {
-	        stage('checkout') {
+        stage('Checkout') {
             steps {
-			     withgit(Git 'https://github.com/praveen603/Praveen.git'){
-                sh 'checkout'
-				}
-				}
+                git 'https://github.com/praveen603/Praveen.git'
             }
-        stage('compile stage') {
+        }
+        stage('Build') {
             steps {
-			     withMaven(maven : 'apache-maven-3.5.0'){
-                sh 'mvn clean compile'
+                withMaven(maven:'maven_3_0_5') {
+                    sh 'mvn clean compile'
+                }
             }
-			}
         }
-        stage('Test'){
-		  steps {
-			     withMaven(maven : 'apache-maven-3.5.0'){
-                sh 'mvn test'
+        stage('Deploy') {
+            steps {
+                withMaven(maven: 'maven_3_0_5') {
+                    sh 'mvn deploy'
+                }
             }
-			}
-           
         }
-       
     }
+}
