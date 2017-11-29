@@ -5,24 +5,24 @@ pipeline {
     stages {
 	        stage('checkout') {
             steps {
-			     withMaven(Git : 'https://github.com/praveen603/Praveen.git'){
+			     withgit(Git 'https://github.com/praveen603/Praveen.git'){
                 sh 'checkout'
+				}
+				}
             }
-	
-	
-	
-	
         stage('compile stage') {
             steps {
 			     withMaven(maven : 'apache-maven-3.5.0'){
                 sh 'mvn clean compile'
             }
+			}
         }
         stage('Test'){
 		  steps {
 			     withMaven(maven : 'apache-maven-3.5.0'){
                 sh 'mvn test'
             }
+			}
            
         }
        
