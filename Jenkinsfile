@@ -9,7 +9,7 @@ pipeline {
 		
         stage('Build') {
             steps {
-                git 'https://github.com/praveen603/New.git' {
+                {
                     sh 'mvn clean compile'
                 }
             }
