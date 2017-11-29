@@ -13,8 +13,14 @@ pipeline {
                     sh 'mvn clean compile'
                 
             }
-        }
-        
+       	   }
+       
+	   stage('Deploy'){
+	       steps 'deploy'
+	   
+	   }
+	   
+	   
     }
 }
 
