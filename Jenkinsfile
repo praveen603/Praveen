@@ -7,7 +7,7 @@ pipeline {
             }
         }
 		tools{
-		    maven 'Maven3.1.1'
+		    maven 'C/apache-maven-3.5.0'
 			jdk'java8'
 			}
         stage('Build') {
